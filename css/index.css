@@ -1,0 +1,177 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+
+html, body {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  background-color: #6363B8;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  overflow: auto;
+  text-align: center;
+}
+
+#logo {
+  width: 200px;
+  margin: 10px;
+  position: relative;
+  left: -10px;
+}
+
+.tab {
+  display: inline-block;
+  height: 50px; width: 190px;
+  margin: 0 -1.5px;
+  padding: 0;
+  border-radius: 20px 20px 0 0;
+  background-color: #57579C;
+  cursor: pointer;
+}
+.tab:hover {
+  background-color: #4E4E9C;
+}
+.active-tab {
+  background-color: #4E4E9C;
+}
+.tab h2 {
+  margin: 10px 0;
+}
+
+#wrapper {
+  margin: 0 auto;
+  padding: 7px 0 15px 0;
+  width: 572px;
+  border-radius: 0 0 15px 15px;
+  background-color: #4E4E9C;
+}
+
+#scroll {
+  position: relative;
+  max-height: 550px;
+  overflow: auto;
+  margin: 0;
+}
+
+.mode {
+  display: none;
+}
+.active-mode {
+  display: inline;
+}
+
+.start, .start1, .waypt, .waypt1, .end, .orig, .dest {
+  display: block;
+  width: 500px; height: 30px;
+  margin: 15px auto;
+  padding: 0 7px;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+.start, .start1 {
+  background-color: #8989C4;
+}
+.waypt, .waypt1 {
+  background-color: #A7A7D1;
+}
+.end {
+  background-color: #8989C4;
+}
+
+.client p {
+  font-size: 25px;
+  margin: 5px;
+}
+.orig {
+  margin: 0 auto;
+  background-color: #8989C4;
+}
+.dest {
+  background-color: #A7A7D1;
+}
+
+.go, .add, .remove {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+}
+.go {
+  padding: 0 12px;
+  top: 15px;
+}
+.add {
+  padding: 0;
+  border-radius: 10px 0 0 10px;
+  top: -12px; left: 164px;
+  width: 25px; height: 25px;
+}
+.remove {
+  padding: 0;
+  border-radius: 0 10px 10px 0;
+  top: -37px; left: 191px;
+  width: 25px; height: 25px;
+}
+
+input:focus {
+  outline: 0;
+}
+
+#map {
+  display: none;
+  position: absolute; top: 0;
+  width: 69vw;
+  height: 100vh;
+}
+#directions {
+  display: none;
+  position: absolute; top: 0; right: 0;
+  width: 29vw;
+  height: 100vh;
+  padding: 0 1vw;
+  margin: 0;
+  background-color: #FFFFFF;
+  overflow: hidden;
+}
+
+#back {
+  display: none;
+  position: fixed;
+  text-align: center;
+  opacity: .2;
+  width: 75px; height: 75px;
+  background-color: #000000;
+  border-radius: 20px 0 0 0;
+  bottom: 0;
+  right: 0;
+  cursor: pointer;
+}
+#back img {
+  position: relative;
+  top: 15px;
+}
+
+#storage {
+  display: none;
+  z-index: -1;
+}
+
+::-webkit-input-placeholder {
+    color:    #36366B;
+}
+:-moz-placeholder {
+    color:    #36366B;
+}
+::-moz-placeholder {
+    color:    #36366B;
+}
+:-ms-input-placeholder {
+    color:    #36366B;
+}

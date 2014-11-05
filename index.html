@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Optimized Route Calculator</title>
+
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCqXQBQIvS5vA4DxQaNi3J50XsEcLswzkU"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/get_map.js"></script>
+    <script type="text/javascript" src="js/clients.js"></script>
+    <script type="text/javascript" src="js/display.js"></script>
+
+  </head>
+  <body>
+    <img id="logo" src="img/orca-logo.png">
+    <div id="input">
+      <div class="tab one"><h2>Drop-Off</h2></div>
+      <div class="tab two"><h2>Pick-Up</h2></div>
+      <div class="tab three active-tab"><h2>Clients</h2></div>
+      <div id="wrapper">
+        <div id="scroll">
+          <div class="mode one">
+            <input class="start" type="textbox" placeholder="Start Location">
+            <input class="waypt" type="textbox" placeholder="Waypoint">
+            <input class="end" type="textbox" placeholder="End Location">
+            <input class="go" type="submit" value="Calculate Route" onclick="calcRoute()">
+            <input class="add" type="button" value="+" onclick="addInput()">
+            <input class="remove" type="button" value="-" onclick="removeInput()">
+          </div>
+          <div class="mode two">
+            <input class="start1" type="textbox" placeholder="Start/End Location">
+            <input class="waypt1" type="textbox" placeholder="Waypoint">
+            <input class="go" type="submit" value="Calculate Route" onclick="calcRoute1()">
+            <input class="add" type="button" value="+" onclick="addInput()">
+            <input class="remove" type="button" value="-" onclick="removeInput()">
+          </div>
+          <div class="mode three active-mode">
+            <div class="client">
+              <p>Client 1</p>
+              <input class="orig" type="textbox" placeholder="Location" value="217 Heath St, Santa Cruz, CA">
+              <input class="dest" type="textbox" placeholder="Destination" value="415 Walnut Ave, Santa Cruz, CA">
+            </div>
+            <div class="client">
+              <p>Client 2</p>
+              <input class="orig" type="textbox" placeholder="Location" value="143 Grant St, Santa Cruz, CA">
+              <input class="dest" type="textbox" placeholder="Destination" value="300 LaFonda Ave, Santa Cruz, CA">
+            </div>
+            <div class="client">
+              <p>Client 3</p>
+              <input class="orig" type="textbox" placeholder="Location" value="143 Grant St, Santa Cruz, CA">
+              <input class="dest" type="textbox" placeholder="Destination" value="113 Lincoln St, Santa Cruz, CA">
+            </div>
+            <input class="go" type="submit" value="Calculate Route" onclick="calcRoute2()">
+            <input class="add" type="button" value="+" onclick="addInput()">
+            <input class="remove" type="button" value="-" onclick="removeInput()">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="map"></div>
+    <div id="directions"></div>
+    <div id="back"><img src="img/x.png"><div>
+    <div id="storage"></div>
+  </body>
+</html>
