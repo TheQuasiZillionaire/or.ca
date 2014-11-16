@@ -2,7 +2,7 @@ var geocoder;
 var directionsDisplay;
 var directionsService = new google.maps.DirectionsService();
 var map;
-function initialize() {
+initialize = function() {
   geocoder = new google.maps.Geocoder();
   directionsDisplay = new google.maps.DirectionsRenderer();
   var santacruz = new google.maps.LatLng(36.9741667, -122.0297222);
@@ -10,12 +10,12 @@ function initialize() {
     zoom: 12,
     center: santacruz
   }
-  map = new google.maps.Map(document.getElementById('map'), mapOptions);
+  map = new google.maps.Map(document.getElementById("map"), mapOptions);
   directionsDisplay.setMap(map);
-  directionsDisplay.setPanel(document.getElementById('directions'));
+  directionsDisplay.setPanel(document.getElementById("directions"));
 }
 
-function calcRoute() {
+calcRoute = function() {
   var start = $(".start").val();
   var end = $(".end").val();
   var waypts = [];
@@ -46,7 +46,7 @@ function calcRoute() {
   });
 }
 
-function calcRoute1() {
+calcRoute1 = function() {
   var start = $(".start1").val();
   var end = $(".start1").val();
   var waypts = [];
@@ -77,8 +77,9 @@ function calcRoute1() {
   });
 }
 
-function calcRoute2() {
-  makeSequence();
+calcRoute2 = function() {
+  var sequence = getSequence();
+  console.log("after getSequence");
   var start = sequence[0];
   var end = sequence[sequence.length-1];
   var waypts = [];
@@ -98,6 +99,7 @@ function calcRoute2() {
   };
 
   directionsService.route(request, function(response, status) {
+    console.log("map");
     if(status == google.maps.DirectionsStatus.OK){
       toggleMap();
       directionsDisplay.setDirections(response);

@@ -2,7 +2,7 @@ var numWaypts = [1, 1];
 var numClients = 3;//Temporarily 3; normally 1
 var mode = 3;
 
-function addInput() {
+addInput = function () {
   if(mode == 1){
     var lastWaypt = $(".waypt:last");
     if(numWaypts[0] < 8) {
@@ -30,7 +30,7 @@ function addInput() {
   }
 }
 
-function removeInput() {
+removeInput = function () {
   if(mode == 1){
     var lastWaypt = $(".waypt:last");
     if(numWaypts[0] > 1) {
@@ -58,7 +58,7 @@ function removeInput() {
   }
 }
 
-function toggleMap() {
+toggleMap = function () {
     $("#input").fadeOut(700);
 
     $("#directions").fadeIn(700);
@@ -67,7 +67,7 @@ function toggleMap() {
     google.maps.event.trigger(map, "resize");
 }
 
-var display = function() {
+display = function() {
   $(".tab").click(function(){
     $(".active-tab").removeClass("active-tab");
     $(this).addClass("active-tab");

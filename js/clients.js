@@ -1,23 +1,6 @@
 var sequence = [];
 var locations = [];
 
-function Client(origin, destination) {
-  this.orig = {val:origin, type:"origin"};
-  this.dest = {val:destination, type:"destination"};
-}
-
-function getClients(){
-  clients = [];
-  for(var i = 0; i < numClients; i++){
-    if($(".orig:eq(" + i + ")").val() != "" && $(".dest:eq(" + i + ")").val() != ""){
-      var origin = $(".orig:eq(" + i + ")").val();
-      var destination = $(".dest:eq(" + i + ")").val();
-      var aClient = new Client(origin, destination);
-      clients.push(aClient);
-    }
-  }
-}
-
 function getLocations() {
   locations = [];
   for(var i = 0; i < riders.length; i++){
@@ -26,27 +9,6 @@ function getLocations() {
   for(var i = 0; i < clients.length; i++){
     locations.push(clients[i].orig);
   }
-}
-
-function getDistance(origin, destination){
-  var service = new google.maps.DistanceMatrixService();
-  service.getDistanceMatrix(
-    {
-      origins: [origin],
-      destinations: [destination],
-      travelMode: google.maps.TravelMode.DRIVING,
-      unitSystem: google.maps.UnitSystem.METRIC,
-      avoidHighways: false,
-      avoidTolls: false
-    },
-    function(response, status) {
-      if (status != google.maps.DistanceMatrixStatus.OK) {
-        alert('Error: ' + status);
-        distance = null;
-      } else {
-        $("#storage").html(response.rows[0].elements[0].distance.value);
-      }
-    });
 }
 
 function resetLists() {
