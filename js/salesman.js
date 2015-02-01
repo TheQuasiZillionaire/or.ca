@@ -1,7 +1,7 @@
 // GLOBAL VARIABLES ============================================================
 var id = 0;
 var clients;
-var retDist;
+var distances = [];
 var taxi;
 
 // CLASSES =====================================================================
@@ -13,6 +13,13 @@ Client = function(origin, destination) {
   this.arrived = false;
   console.log("Client " + this.id + " created.");
 };
+
+// --- Leg ---------------------------------------------------------------------
+Distance = function(origin, destination, distance) {
+  this.orig = origin;
+  this.dest = destination;
+  this.dist = distance;
+}
 
 // --- Vehicle -----------------------------------------------------------------
 Vehicle = function() {
@@ -32,7 +39,7 @@ Vehicle.prototype.remove = function(id) {
     if(this.passengers[i].id == id){
       this.passengers.splice(i, 1);
       console.log("Client " + id + " has left the vehicle.");
-      return;
+      return; 
     }
   }
   console.log("Client " + id + " is not in the vehicle.");
@@ -81,9 +88,8 @@ getDistance = function(origin, destination) {
         console.log('Error: ' + status);
         distance = null;
       } else {
-        //$("#storage").html(response.rows[0].elements[0].distance.value);
-        //console.log(response.rows[0].elements[0].distance.value);
-        retDist = response.rows[0].elements[0].distance.value;
+        distances.push(new Distance(response.originAddresses[0], response.destinationAddresses[0], response.rows[0].elements[0].distance.value));
+        console.log(distances);
       }
     });
 };
