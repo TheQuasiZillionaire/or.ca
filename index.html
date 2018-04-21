@@ -6,8 +6,7 @@
     <title>Optimized Route Calculator</title>
 
     <link rel="stylesheet" type="text/css" href="css/index.css">
-
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyAMmWn9zMJrcRaPHWVfQdvLOAvV048yLdo"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMmWn9zMJrcRaPHWVfQdvLOAvV048yLdo" type="text/javascript"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/salesman.js"></script>
     <script type="text/javascript" src="js/display.js"></script>
@@ -40,18 +39,13 @@
           <div class="mode three active-mode">
             <div class="client">
               <p>Client 1</p>
-              <input class="orig" type="textbox" placeholder="Location" value="217 Heath St, Santa Cruz, CA">
-              <input class="dest" type="textbox" placeholder="Destination" value="415 Walnut Ave, Santa Cruz, CA">
+              <input class="orig" type="textbox" placeholder="Location">
+              <input class="dest" type="textbox" placeholder="Destination">
             </div>
             <div class="client">
               <p>Client 2</p>
-              <input class="orig" type="textbox" placeholder="Location" value="143 Grant St, Santa Cruz, CA">
-              <input class="dest" type="textbox" placeholder="Destination" value="300 LaFonda Ave, Santa Cruz, CA">
-            </div>
-            <div class="client">
-              <p>Client 3</p>
-              <input class="orig" type="textbox" placeholder="Location" value="143 Grant St, Santa Cruz, CA">
-              <input class="dest" type="textbox" placeholder="Destination" value="113 Lincoln St, Santa Cruz, CA">
+              <input class="orig" type="textbox" placeholder="Location">
+              <input class="dest" type="textbox" placeholder="Destination">
             </div>
             <input class="go" type="submit" value="Calculate Route" onclick="calcRoute2()">
             <input class="add" type="button" value="+" onclick="addInput()">
